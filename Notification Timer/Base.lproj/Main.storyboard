@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dbG-C3-GE7">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="Notification_Timer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="JOb-Uo-9sn">
+                                <rect key="frame" x="0.0" y="88" width="414" height="474"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcr-N7-TGl">
+                                <rect key="frame" x="138" y="643" width="138" height="71"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Add Timer">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="nxtPage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Q9G-7I-FtI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JOb-Uo-9sn" secondAttribute="trailing" id="68Q-rj-fJ2"/>
+                            <constraint firstItem="fcr-N7-TGl" firstAttribute="top" secondItem="JOb-Uo-9sn" secondAttribute="bottom" constant="81" id="809-gV-7h7"/>
+                            <constraint firstItem="JOb-Uo-9sn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9bD-NK-YWa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="fcr-N7-TGl" secondAttribute="bottom" constant="148" id="EDF-3A-Ubj"/>
+                            <constraint firstItem="fcr-N7-TGl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="138" id="Ipr-e1-Xvh"/>
+                            <constraint firstItem="JOb-Uo-9sn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="iXz-H4-t6S"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="JOb-Uo-9sn" secondAttribute="bottom" constant="300" id="mHC-au-QWH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fcr-N7-TGl" secondAttribute="trailing" constant="138" id="tel-6X-Jm9"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="BDe-Xe-Tyo"/>
+                    <connections>
+                        <outlet property="tblView" destination="JOb-Uo-9sn" id="r2P-wY-RAT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="939.13043478260875" y="51.5625"/>
+        </scene>
+        <!--Date Picker View-->
+        <scene sceneID="bd0-CO-0BZ">
+            <objects>
+                <viewController storyboardIdentifier="datePickerView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZW3-K7-9rT" customClass="datePickerView" customModule="Notification_Timer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LVp-YQ-k9S">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="l4E-4c-xJL">
+                                <rect key="frame" x="0.0" y="44" width="414" height="452"/>
+                                <connections>
+                                    <action selector="selectedTime:" destination="ZW3-K7-9rT" eventType="valueChanged" id="bOb-VA-QAg"/>
+                                </connections>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fXm-r2-WGc">
+                                <rect key="frame" x="164" y="610" width="87" height="39"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Submit"/>
+                                <connections>
+                                    <action selector="submitData:" destination="ZW3-K7-9rT" eventType="touchUpInside" id="KaI-nm-P5u"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bfq-LV-sMX"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fXm-r2-WGc" firstAttribute="top" secondItem="l4E-4c-xJL" secondAttribute="bottom" constant="114" id="SMh-Iq-JSK"/>
+                            <constraint firstItem="l4E-4c-xJL" firstAttribute="top" secondItem="bfq-LV-sMX" secondAttribute="top" id="ciz-wZ-Kh4"/>
+                            <constraint firstItem="bfq-LV-sMX" firstAttribute="bottom" secondItem="fXm-r2-WGc" secondAttribute="bottom" constant="213" id="eAH-sO-4kg"/>
+                            <constraint firstItem="l4E-4c-xJL" firstAttribute="trailing" secondItem="bfq-LV-sMX" secondAttribute="trailing" id="eCO-I5-mde"/>
+                            <constraint firstItem="bfq-LV-sMX" firstAttribute="trailing" secondItem="fXm-r2-WGc" secondAttribute="trailing" constant="163" id="k04-0E-GMb"/>
+                            <constraint firstItem="fXm-r2-WGc" firstAttribute="leading" secondItem="bfq-LV-sMX" secondAttribute="leading" constant="164" id="qg7-wt-EbU"/>
+                            <constraint firstItem="l4E-4c-xJL" firstAttribute="leading" secondItem="bfq-LV-sMX" secondAttribute="leading" id="r6D-m1-INf"/>
+                            <constraint firstAttribute="bottom" secondItem="l4E-4c-xJL" secondAttribute="bottom" constant="400" id="u5r-Ac-vnf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="timeSelector" destination="l4E-4c-xJL" id="yM2-gb-S5X"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ltT-Y3-noh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1847.826086956522" y="64.955357142857139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Fwb-v8-ZJo">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dbG-C3-GE7" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Uro-jv-30a">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="cyQ-jr-12k"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YEc-2n-BdX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="28.985507246376812" y="51.5625"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
